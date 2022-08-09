@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace CriticalCodes\Zaggy\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ZaggyCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'zaggy';
 
     public $description = 'My command';
 

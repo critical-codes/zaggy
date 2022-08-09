@@ -1,5 +1,11 @@
 <?php
 
-it('can test', function () {
-    expect(true)->toBeTrue();
-});
+use CriticalCodes\Zaggy\Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    public function test_can_test()
+    {
+        $this->assertTrue(true);
+    }
+}
