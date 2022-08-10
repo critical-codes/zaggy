@@ -18,8 +18,6 @@ class ZaggyServiceProvider extends PackageServiceProvider
         $package
             ->name('zaggy')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_zaggy_table')
             ->hasCommand(ZaggyCommand::class);
     }
 }
