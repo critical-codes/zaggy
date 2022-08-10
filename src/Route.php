@@ -50,7 +50,6 @@ class Route implements Arrayable
          */
         readonly array|null $parameterNames,
 
-
         /**
          * The the binding fields for the route..
          *
@@ -81,7 +80,7 @@ class Route implements Arrayable
             'defaults' => $this->defaults,
             'wheres' => $this->wheres,
             'parameterNames' => $this->parameterNames,
-            'bindingFields' => $this->bindingFields
+            'bindingFields' => $this->bindingFields,
         ];
     }
 

@@ -16,7 +16,7 @@ class RouterTest extends TestCase
                         'PUT',
                     ],
                     'defaults' => [
-                        'author' => 'josh'
+                        'author' => 'josh',
                     ],
                     'wheres' => [
                         'path' => '.*',
@@ -24,11 +24,11 @@ class RouterTest extends TestCase
                     'parameterNames' => [
                         'author',
                         'article',
-                        'path'
+                        'path',
                     ],
                     'bindingFields' => [
-                        'article' => 'slug'
-                    ]
+                        'article' => 'slug',
+                    ],
                 ],
             ],
         ], Router::fromIlluminateRouter($this->router())->toArray());
