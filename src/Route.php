@@ -66,7 +66,7 @@ class Route implements Arrayable
 
     public static function typescriptInterface(): string
     {
-        return <<<JAVASCRIPT
+        return <<<'JAVASCRIPT'
 interface RouteDefinition<ParameterName extends string = string> {
     // The name of the route
     // For example `articles.show`

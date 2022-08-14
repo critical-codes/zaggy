@@ -30,6 +30,7 @@ class Router implements Arrayable, Jsonable, JsonSerializable
     public static function typescriptInterface(): string
     {
         $routeInterface = Route::typescriptInterface();
+
         return <<<JAVASCRIPT
 {$routeInterface}
 
@@ -43,6 +44,7 @@ JAVASCRIPT;
     {
         $router = $this->toJson(JSON_PRETTY_PRINT);
         $interface = static::typescriptInterface();
+
         return <<<JAVASCRIPT
 {$interface}
 
@@ -63,7 +65,7 @@ JAVASCRIPT;
     }
 
     /**
-     * @param integer $options
+     * @param  int  $options
      * @return void
      */
     public function toJson($options = 0)

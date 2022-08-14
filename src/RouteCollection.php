@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Routing\Route as IlluminateRoute;
 use Illuminate\Routing\RouteCollection as IlluminateRouteCollection;
 use Illuminate\Support\Collection;
+
 class RouteCollection extends Collection
 {
     /**
@@ -29,10 +30,11 @@ class RouteCollection extends Collection
     ): self {
         return new self(
             collect($routeCollection->getRoutes())->mapWithKeys(
-                function(IlluminateRoute $illuminateRoute) {
+                function (IlluminateRoute $illuminateRoute) {
                     $route = Route::fromIlluminateRoute($illuminateRoute);
+
                     return [
-                        $route->name => $route
+                        $route->name => $route,
                     ];
                 }
             ),
