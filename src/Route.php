@@ -41,7 +41,7 @@ class Route implements Arrayable
         /**
          * The parameter names for the route.
          */
-        readonly array|null $parameterNames,
+        readonly array $parameterNames,
 
         /**
          * The the binding fields for the route.
@@ -59,7 +59,7 @@ class Route implements Arrayable
             $route->isFallback,
             $route->defaults,
             $route->wheres,
-            $route->parameterNames(),
+            $route->parameterNames() ?? [],
             $route->bindingFields()
         );
     }
@@ -81,7 +81,7 @@ interface RouteDefinition<ParameterName extends string = string> {
     // Regex patterns for any path parameters that should match a regex
     wheres: Partial<{ [K in ParameterName]: string }>;
     // The names of the route parameters in the url in order of appearance
-    parameterNames: ReadonlyArray<ParameterName> | null;
+    parameterNames: ReadonlyArray<ParameterName>;
     // For route model binding, if a different query key has been set.
     bindingFields: Partial<{ [K in ParameterName]: string }>;
 }
