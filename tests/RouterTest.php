@@ -10,7 +10,8 @@ class RouterTest extends TestCase
     {
         $this->assertSame([
             'routes' => [
-                [
+                'articles.show' => [
+                    'name' => 'articles.show',
                     'uri' => 'articles/{author}/{article}/{path}',
                     'methods' => [
                         'PUT',
@@ -32,6 +33,19 @@ class RouterTest extends TestCase
                 ],
             ],
         ], Router::fromIlluminateRouter($this->router())->toArray());
+    }
+
+    public function test_router_serialized_to_typescript()
+    {
+        file_put_contents(
+            __DIR__.'/stubs/router.ts',
+            Router::fromIlluminateRouter($this->router())->toTypescript()
+        );
+
+        $this->assertSame(
+            file_get_contents(__DIR__.'/stubs/router.ts'),
+            Router::fromIlluminateRouter($this->router())->toTypescript()
+        );
     }
 
     protected function router(): IlluminateRouter
